@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revenue Reach | Digital Dominance</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">REVENUE <span
+                class="highlight">REACH</span></a>
+        <ul class="nav-links">
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="#services">Solutions</a></li>
+            <li><a href="#market-data">Intelligence</a></li>
+            <li><a href="#contact" class="cta-button">Initiate Protocol</a></li>
+        </ul>
+    </nav>
+
+    <!-- Global Background -->
+    <canvas id="hero-canvas"></canvas>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="reveal-text">AMPLIFY YOUR <br><span class="gradient-text">DIGITAL RESONANCE</span></h1>
+            <p class="subtitle reveal-text delay-200">We engineer virality through data-driven precision and aesthetic
+                supremacy.</p>
+            <div class="hero-actions reveal-text delay-400">
+                <button class="primary-btn">Explore capabilities</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Ticker -->
+    <section class="stats-bar">
+        <div class="stat-item">
+            <span class="number" data-target="500">0</span><span class="suffix">M+</span>
+            <span class="label">Daily Impressions</span>
+        </div>
+        <div class="stat-item">
+            <span class="number" data-target="320">0</span><span class="suffix">%</span>
+            <span class="label">Average ROI</span>
+        </div>
+        <div class="stat-item">
+            <span class="number" data-target="85">0</span><span class="suffix">K+</span>
+            <span class="label">Influencers Activated</span>
+        </div>
+    </section>
+
+    <!-- Performance Solutions -->
+    <section id="services" class="section performance-solutions">
+        <h2 class="section-title">PERFORMANCE SOLUTIONS</h2>
+        <div class="grid-3">
+            <!-- Solution 01 -->
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3>Solution 01: Core Growth</h3>
+                    <div class="pricing-price">$1,500/mo</div>
+                    <p>Ideal for businesses starting their lead-gen journey.</p>
+                </div>
+                <ul class="pricing-features">
+                    <li><i class="fa-solid fa-check"></i> Meta Ads Infrastructure Setup</li>
+                    <li><i class="fa-solid fa-check"></i> Basic Pixel & Conversion Tracking</li>
+                    <li><i class="fa-solid fa-check"></i> Bi-Weekly Performance Reports</li>
+                    <li><i class="fa-solid fa-check"></i> 2 Creative Refreshes per month</li>
+                    <li><i class="fa-solid fa-check"></i> Standard Lead Capture Forms</li>
+                </ul>
+                <button class="cta-btn">REQUEST ACCESS</button>
+            </div>
+
+            <!-- Solution 02 -->
+            <div class="pricing-card recommended">
+                <div class="badge">Most Popular</div>
+                <div class="pricing-header">
+                    <h3>Solution 02: Scaled Infrastructure</h3>
+                    <div class="pricing-price">$3,000/mo</div>
+                    <p>Advanced systems for high-volume lead quality.</p>
+                </div>
+                <ul class="pricing-features">
+                    <li><i class="fa-solid fa-check"></i> <span class="feature-strong">Everything in Core Growth</span>
+                    </li>
+                    <li><i class="fa-solid fa-check"></i> CAPI (Server-Side) Tracking</li>
+                    <li><i class="fa-solid fa-check"></i> Daily Manual Optimization</li>
+                    <li><i class="fa-solid fa-check"></i> Weekly Creative Micro-refreshes</li>
+                    <li><i class="fa-solid fa-check"></i> Lead Quality Filtering</li>
+                </ul>
+                <button class="cta-btn primary">REQUEST ACCESS</button>
+            </div>
+
+            <!-- Solution 03 -->
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3>Solution 03: Enterprise Mastery</h3>
+                    <div class="pricing-price">$5,000+/mo</div>
+                    <p>Complete hands-off ecosystem for scaling past 7-figures.</p>
+                </div>
+                <ul class="pricing-features">
+                    <li><i class="fa-solid fa-check"></i> <span class="feature-strong">Everything in Scaled
+                            Infrastructure</span></li>
+                    <li><i class="fa-solid fa-check"></i> Full CRM Integration</li>
+                    <li><i class="fa-solid fa-check"></i> Automated Lead Nurturing</li>
+                    <li><i class="fa-solid fa-check"></i> Unlimited Creative Variations</li>
+                    <li><i class="fa-solid fa-check"></i> Dedicated 24/7 Slack Support</li>
+                </ul>
+                <button class="cta-btn">REQUEST ACCESS</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Tool -->
+    <section id="market-data" class="section dark-alt">
+        <h2 class="section-title">PROJECT YOUR GROWTH</h2>
+        <p
+            style="text-align: center; max-width: 600px; margin: -2rem auto 4rem auto; color: var(--text-muted); line-height: 1.6;">
+            Use our proprietary Momentum Calculator to estimate reach based on ad spend velocity.</p>
+
+        <div class="split-layout">
+            <div class="text-side">
+                <div class="input-group">
+                    <label>Monthly Budget Allocation ($)</label>
+                    <input type="range" id="budget-slider" min="1000" max="50000" step="500" value="5000">
+                    <div class="value-display">$<span id="budget-value">5,000</span></div>
+                </div>
+            </div>
+            <div class="visual-side">
+                <div class="graph-container">
+                    <canvas id="growth-chart"></canvas>
+                </div>
+                <div class="projection-result">
+                    <h4>Estimated Reach</h4>
+                    <div class="big-number" id="reach-projection">250,000</div>
+                    <div class="small-label">Unique Accounts</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact-section">
+        <div class="contact-glass">
+            <h2>SECURE YOUR SLOT</h2>
+            <form>
+                <div class="form-group">
+                    <input type="text" required placeholder=" ">
+                    <label>Corporate Identity</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" required placeholder=" ">
+                    <label>Comms Channel</label>
+                </div>
+                <button type="submit" class="primary-btn full-width">TRANSMIT</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo">REVENUE REACH</div>
+            <div class="copyright">&copy; 2025 ALL RIGHTS RESERVED.</div>
+        </div>
+    </footer>
+
+    <script src="script-v2.js"></script>
+
+</body>
+
+</html>
