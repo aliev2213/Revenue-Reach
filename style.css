@@ -145,6 +145,45 @@ h3 {
     text-shadow: 0 0 12px rgba(190, 30, 45, 0.7), 0 0 24px rgba(190, 30, 45, 0.35);
 }
 
+/* PORTFOLIO — always-glowing standout nav link */
+.nav-portfolio {
+    color: #BE1E2D !important;
+    font-family: var(--font-head) !important;
+    font-weight: 700 !important;
+    font-size: 0.82rem !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem !important;
+    border: 1px solid rgba(190, 30, 45, 0.45);
+    border-radius: 50px;
+    text-shadow: 0 0 10px rgba(190, 30, 45, 0.5);
+    box-shadow: 0 0 14px rgba(190, 30, 45, 0.15), inset 0 0 10px rgba(190, 30, 45, 0.04);
+    animation: portfolio-pulse 3s ease-in-out infinite;
+    transition: color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, text-shadow 0.3s ease !important;
+}
+
+.nav-portfolio:hover {
+    color: #fff !important;
+    background: #BE1E2D;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.6) !important;
+    box-shadow: 0 0 28px rgba(190, 30, 45, 0.7), 0 0 60px rgba(190, 30, 45, 0.3) !important;
+    border-color: #BE1E2D;
+}
+
+@keyframes portfolio-pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 14px rgba(190, 30, 45, 0.15), inset 0 0 10px rgba(190, 30, 45, 0.04);
+        border-color: rgba(190, 30, 45, 0.45);
+    }
+
+    50% {
+        box-shadow: 0 0 24px rgba(190, 30, 45, 0.4), inset 0 0 14px rgba(190, 30, 45, 0.08);
+        border-color: rgba(190, 30, 45, 0.8);
+    }
+}
+
 /* Hero */
 .hero {
     height: 100vh;
