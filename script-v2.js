@@ -329,4 +329,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     console.log('🎉 All initialization complete!');
+
+    // --- Mobile Menu Toggle ---
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    if (menuBtn && navLinks) {
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            const icon = menuBtn.querySelector('i');
+            if (navLinks.classList.contains('open')) {
+                icon.className = 'fa-solid fa-xmark';
+            } else {
+                icon.className = 'fa-solid fa-bars';
+            }
+        });
+        // Close on link click (mobile)
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                menuBtn.querySelector('i').className = 'fa-solid fa-bars';
+            });
+        });
+        console.log('📱 Mobile menu initialized');
+    }
 });
+
+// --- FAQ Accordion (global scope for onclick) ---
+function toggleFaq(id) {
+    const item = document.getElementById(id);
+    if (!item) return;
+    const isOpen = item.classList.contains('open');
+
+    // Close all open items first
+    document.querySelectorAll('.faq-item.open').forEach(openItem => {
+        openItem.classList.remove('open');
+    });
+
+    // If it wasn't open, open it now
+    if (!isOpen) {
+        item.classList.add('open');
+    }
+    console.log(`📋 FAQ toggled: ${id} → ${!isOpen ? 'open' : 'closed'}`);
+}
+
