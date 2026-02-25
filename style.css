@@ -184,6 +184,17 @@ h3 {
     }
 }
 
+/* Active state — on the portfolio page itself, pill is always fully lit */
+.nav-portfolio--active,
+.nav-portfolio--active:hover {
+    background: #BE1E2D !important;
+    color: #fff !important;
+    text-shadow: 0 0 16px rgba(255, 255, 255, 0.5) !important;
+    box-shadow: 0 0 28px rgba(190, 30, 45, 0.65), 0 0 60px rgba(190, 30, 45, 0.25) !important;
+    border-color: #BE1E2D !important;
+    animation: none;
+}
+
 /* Hero */
 .hero {
     height: 100vh;
