@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 chartCtx.lineWidth = 3;
                 chartCtx.beginPath();
                 chartCtx.moveTo(0, 200);
-                const factor = budget / 50000;
+                const factor = budget / 10000;
                 for (let x = 0; x <= 400; x += 10) {
                     let norm = x / 400;
                     let y = 200 - (Math.pow(norm, 2) * 200 * (0.5 + factor * 0.5));
@@ -262,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
             function updateCalculator() {
                 const val = +slider.value;
                 display.innerText = val.toLocaleString();
-                const reach = Math.floor(val * 50);
+                const reach = Math.floor(val * 22.5);
                 result.innerText = reach.toLocaleString();
                 drawChart(val);
                 console.log(`📊 Calculator updated: $${val} → ${reach} reach`);

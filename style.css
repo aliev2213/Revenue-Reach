@@ -147,52 +147,51 @@ h3 {
 
 /* PORTFOLIO — always-glowing standout nav link */
 .nav-portfolio {
-    color: #BE1E2D !important;
+    color: #fff !important;
     font-family: var(--font-head) !important;
     font-weight: 700 !important;
     font-size: 0.82rem !important;
     letter-spacing: 2px !important;
     text-transform: uppercase;
-    padding: 0.4rem 1rem !important;
-    border: 1px solid rgba(190, 30, 45, 0.45);
+    padding: 0.4rem 1.2rem !important;
     border-radius: 50px;
-    text-shadow: 0 0 10px rgba(190, 30, 45, 0.5);
-    box-shadow: 0 0 14px rgba(190, 30, 45, 0.15), inset 0 0 10px rgba(190, 30, 45, 0.04);
-    animation: portfolio-pulse 3s ease-in-out infinite;
-    transition: color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, text-shadow 0.3s ease !important;
+    border: none;
+    background: linear-gradient(90deg, #ff3d7f, #ff75a0, #ff1a66, #ff3d7f);
+    background-size: 300% 100%;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 15px rgba(255, 61, 127, 0.4);
+    animation: portfolio-flow 3s linear infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 }
 
 .nav-portfolio:hover {
-    color: #fff !important;
-    background: #BE1E2D;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.6) !important;
-    box-shadow: 0 0 28px rgba(190, 30, 45, 0.7), 0 0 60px rgba(190, 30, 45, 0.3) !important;
-    border-color: #BE1E2D;
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 61, 127, 0.6), 0 0 50px rgba(255, 61, 127, 0.3) !important;
 }
 
-@keyframes portfolio-pulse {
-
-    0%,
-    100% {
-        box-shadow: 0 0 14px rgba(190, 30, 45, 0.15), inset 0 0 10px rgba(190, 30, 45, 0.04);
-        border-color: rgba(190, 30, 45, 0.45);
+@keyframes portfolio-flow {
+    0% {
+        background-position: 0% 50%;
+        box-shadow: 0 0 15px rgba(255, 61, 127, 0.4);
     }
-
     50% {
-        box-shadow: 0 0 24px rgba(190, 30, 45, 0.4), inset 0 0 14px rgba(190, 30, 45, 0.08);
-        border-color: rgba(190, 30, 45, 0.8);
+        box-shadow: 0 0 25px rgba(255, 61, 127, 0.6);
+    }
+    100% {
+        background-position: -300% 50%;
+        box-shadow: 0 0 15px rgba(255, 61, 127, 0.4);
     }
 }
 
 /* Active state — on the portfolio page itself, pill is always fully lit */
 .nav-portfolio--active,
 .nav-portfolio--active:hover {
-    background: #BE1E2D !important;
+    background: linear-gradient(90deg, #ff3d7f, #ff75a0, #ff1a66, #ff3d7f) !important;
+    background-size: 300% 100%;
     color: #fff !important;
-    text-shadow: 0 0 16px rgba(255, 255, 255, 0.5) !important;
-    box-shadow: 0 0 28px rgba(190, 30, 45, 0.65), 0 0 60px rgba(190, 30, 45, 0.25) !important;
-    border-color: #BE1E2D !important;
-    animation: none;
+    box-shadow: 0 0 30px rgba(255, 61, 127, 0.7), 0 0 60px rgba(255, 61, 127, 0.3) !important;
+    animation: portfolio-flow 3s linear infinite;
+    transform: scale(1.05);
 }
 
 /* Hero */
