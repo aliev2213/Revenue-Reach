@@ -250,15 +250,59 @@
             <div class="pricing-card">
                 <div class="data-chip">● PLAN 1 (FOUNDATION)</div>
                 <div class="pricing-header">
-                    <h3>Social & Brand Builder</h3>
-                    <div class="protocol-allocation">For Instagram & Facebook</div>
+                    <h3>Social &amp; Brand Builder</h3>
+                    <div class="protocol-allocation">For Instagram &amp; Facebook</div>
                     <p>A professional, consistent presence managed for you.</p>
                 </div>
                 <ul class="pricing-features">
-                    <li><i class="fa-solid fa-check"></i> Professional Brand Development & Setup</li>
-                    <li><i class="fa-solid fa-check"></i> Regular Instagram & Facebook Posting</li>
-                    <li><i class="fa-solid fa-check"></i> Clean, Engaging Content Creation</li>
-                    <li><i class="fa-solid fa-check"></i> Community Management & Replying</li>
+                    <li class="pf-item">
+                        <button class="pf-toggle" onclick="toggleFeature(this)">
+                            <span class="pf-icon"><i class="fa-solid fa-check"></i></span>
+                            <span class="pf-title">Professional Brand Development &amp; Setup</span>
+                            <i class="fa-solid fa-chevron-down pf-chevron"></i>
+                        </button>
+                        <div class="pf-detail">We audit your existing profiles, refresh your bio, highlights, and cover images, and build a consistent visual identity (colours, fonts, tone) that makes your brand look polished and trustworthy from day one.</div>
+                    </li>
+                    <li class="pf-item">
+                        <button class="pf-toggle" onclick="toggleFeature(this)">
+                            <span class="pf-icon"><i class="fa-solid fa-check"></i></span>
+                            <span class="pf-title">Regular Instagram &amp; Facebook Posting</span>
+                            <i class="fa-solid fa-chevron-down pf-chevron"></i>
+                        </button>
+                        <div class="pf-detail">We create and schedule posts on your behalf multiple times per week, keeping your feed active so you stay relevant in the algorithm without lifting a finger.</div>
+                    </li>
+                    <li class="pf-item">
+                        <button class="pf-toggle" onclick="toggleFeature(this)">
+                            <span class="pf-icon"><i class="fa-solid fa-check"></i></span>
+                            <span class="pf-title">Clean, Engaging Content Creation</span>
+                            <i class="fa-solid fa-chevron-down pf-chevron"></i>
+                        </button>
+                        <div class="pf-detail">Every piece of content — graphics, captions, and hashtag sets — is designed specifically for your audience. No recycled templates; everything is crafted to reflect your business and speak to your ideal customer.</div>
+                    </li>
+                    <li class="pf-item">
+                        <button class="pf-toggle" onclick="toggleFeature(this)">
+                            <span class="pf-icon"><i class="fa-solid fa-check"></i></span>
+                            <span class="pf-title">Community Management &amp; Replying</span>
+                            <i class="fa-solid fa-chevron-down pf-chevron"></i>
+                        </button>
+                        <div class="pf-detail">We monitor your comments and messages daily, responding to questions, thanking followers, and keeping the conversation going so your audience feels heard and valued.</div>
+                    </li>
+                    <li class="pf-item">
+                        <button class="pf-toggle" onclick="toggleFeature(this)">
+                            <span class="pf-icon"><i class="fa-solid fa-check"></i></span>
+                            <span class="pf-title">Monthly Content Calendar</span>
+                            <i class="fa-solid fa-chevron-down pf-chevron"></i>
+                        </button>
+                        <div class="pf-detail">You receive a planned-out schedule ahead of each month so you always know exactly what's going out and when, with full approval before anything is published.</div>
+                    </li>
+                    <li class="pf-item">
+                        <button class="pf-toggle" onclick="toggleFeature(this)">
+                            <span class="pf-icon"><i class="fa-solid fa-check"></i></span>
+                            <span class="pf-title">Monthly Performance Summary</span>
+                            <i class="fa-solid fa-chevron-down pf-chevron"></i>
+                        </button>
+                        <div class="pf-detail">A clear, easy-to-read report showing follower growth, post reach, engagement, and what's working — no confusing dashboards, just straight answers.</div>
+                    </li>
                 </ul>
                 <button class="cta-btn">GET STARTED</button>
             </div>
@@ -268,15 +312,55 @@
                 <div class="badge">MOST POPULAR</div>
                 <div class="data-chip">● PLAN 2 (AUTOMATION)</div>
                 <div class="pricing-header">
-                    <h3>Video & Lead Generation</h3>
-                    <div class="protocol-allocation">For TikTok & Reels</div>
+                    <h3>Video &amp; Lead Generation</h3>
+                    <div class="protocol-allocation">For TikTok &amp; Reels</div>
                     <p>Drive engagement and automatically capture interested leads.</p>
                 </div>
                 <ul class="pricing-features">
-                    <li><i class="fa-solid fa-check"></i> <span class="feature-strong">Everything in Plan 1</span></li>
-                    <li><i class="fa-solid fa-check"></i> Short-Form Video Editing (TikTok/Reels)</li>
-                    <li><i class="fa-solid fa-check"></i> Automated DM Sourcing & Follow-ups</li>
-                    <li><i class="fa-solid fa-check"></i> Streamlined Lead Generation Strategies</li>
+                    <li class="pf-item pf-item--plain">
+                        <span class="pf-icon"><i class="fa-solid fa-check"></i></span>
+                        <span class="feature-strong">Everything in Plan 1</span>
+                    </li>
+                    <li class="pf-item">
+                        <button class="pf-toggle" onclick="toggleFeature(this)">
+                            <span class="pf-icon"><i class="fa-solid fa-check"></i></span>
+                            <span class="pf-title">Short-Form Video Editing (TikTok/Reels)</span>
+                            <i class="fa-solid fa-chevron-down pf-chevron"></i>
+                        </button>
+                        <div class="pf-detail">We take your raw footage or repurpose existing content into scroll-stopping vertical videos with captions, trending audio, and on-brand graphics — fully edited and ready to post on TikTok, Instagram Reels, and YouTube Shorts.</div>
+                    </li>
+                    <li class="pf-item">
+                        <button class="pf-toggle" onclick="toggleFeature(this)">
+                            <span class="pf-icon"><i class="fa-solid fa-check"></i></span>
+                            <span class="pf-title">Automated DM Sourcing &amp; Follow-ups</span>
+                            <i class="fa-solid fa-chevron-down pf-chevron"></i>
+                        </button>
+                        <div class="pf-detail">When someone comments a keyword on your post (e.g. "info"), they automatically receive a friendly direct message with your offer, a booking link, or more details. This runs 24/7 so you never miss a lead, even while you sleep.</div>
+                    </li>
+                    <li class="pf-item">
+                        <button class="pf-toggle" onclick="toggleFeature(this)">
+                            <span class="pf-icon"><i class="fa-solid fa-check"></i></span>
+                            <span class="pf-title">Streamlined Lead Generation Strategies</span>
+                            <i class="fa-solid fa-chevron-down pf-chevron"></i>
+                        </button>
+                        <div class="pf-detail">We design specific campaigns — giveaways, call-to-action posts, lead magnet promotions — with the goal of turning your followers into people who raise their hand and say "I'm interested." Every strategy is built around generating real enquiries, not just likes.</div>
+                    </li>
+                    <li class="pf-item">
+                        <button class="pf-toggle" onclick="toggleFeature(this)">
+                            <span class="pf-icon"><i class="fa-solid fa-check"></i></span>
+                            <span class="pf-title">Story &amp; Reel Campaign Planning</span>
+                            <i class="fa-solid fa-chevron-down pf-chevron"></i>
+                        </button>
+                        <div class="pf-detail">We plan and execute story sequences and Reel series that build momentum and push viewers toward a specific action, such as booking a call or visiting your website.</div>
+                    </li>
+                    <li class="pf-item">
+                        <button class="pf-toggle" onclick="toggleFeature(this)">
+                            <span class="pf-icon"><i class="fa-solid fa-check"></i></span>
+                            <span class="pf-title">Lead Tracking &amp; Reporting</span>
+                            <i class="fa-solid fa-chevron-down pf-chevron"></i>
+                        </button>
+                        <div class="pf-detail">You get a clear breakdown each month of how many leads came in, which content drove them, and what the conversion path looked like — so you always understand your return.</div>
+                    </li>
                 </ul>
                 <button class="cta-btn primary">GET STARTED</button>
             </div>
@@ -290,10 +374,50 @@
                     <p>Maximize your visibility across all channels with targeted paid advertising.</p>
                 </div>
                 <ul class="pricing-features">
-                    <li><i class="fa-solid fa-check"></i> <span class="feature-strong">Everything in Plan 2</span></li>
-                    <li><i class="fa-solid fa-check"></i> Professional B2B LinkedIn Management</li>
-                    <li><i class="fa-solid fa-check"></i> Paid Ads on Google, Meta & LinkedIn</li>
-                    <li><i class="fa-solid fa-check"></i> Complete Analytics & Growth Consulting</li>
+                    <li class="pf-item pf-item--plain">
+                        <span class="pf-icon"><i class="fa-solid fa-check"></i></span>
+                        <span class="feature-strong">Everything in Plan 2</span>
+                    </li>
+                    <li class="pf-item">
+                        <button class="pf-toggle" onclick="toggleFeature(this)">
+                            <span class="pf-icon"><i class="fa-solid fa-check"></i></span>
+                            <span class="pf-title">Professional B2B LinkedIn Management</span>
+                            <i class="fa-solid fa-chevron-down pf-chevron"></i>
+                        </button>
+                        <div class="pf-detail">We manage your LinkedIn presence to position you as an authority in your industry. This includes thought-leadership posts, connection outreach to decision-makers, and engagement with relevant professional communities to open doors to high-value business relationships.</div>
+                    </li>
+                    <li class="pf-item">
+                        <button class="pf-toggle" onclick="toggleFeature(this)">
+                            <span class="pf-icon"><i class="fa-solid fa-check"></i></span>
+                            <span class="pf-title">Paid Ads on Google, Meta &amp; LinkedIn</span>
+                            <i class="fa-solid fa-chevron-down pf-chevron"></i>
+                        </button>
+                        <div class="pf-detail">We build, launch, and manage targeted ad campaigns across all three platforms. This means your business shows up in front of people who are actively searching for what you offer (Google), scrolling social media (Meta), or browsing professionally (LinkedIn) — with your budget spent as efficiently as possible.</div>
+                    </li>
+                    <li class="pf-item">
+                        <button class="pf-toggle" onclick="toggleFeature(this)">
+                            <span class="pf-icon"><i class="fa-solid fa-check"></i></span>
+                            <span class="pf-title">Ad Creative &amp; Copywriting</span>
+                            <i class="fa-solid fa-chevron-down pf-chevron"></i>
+                        </button>
+                        <div class="pf-detail">Every ad is written and designed in-house. We test multiple angles and creatives to find what converts best, then double down on what's working to maximise your return on ad spend.</div>
+                    </li>
+                    <li class="pf-item">
+                        <button class="pf-toggle" onclick="toggleFeature(this)">
+                            <span class="pf-icon"><i class="fa-solid fa-check"></i></span>
+                            <span class="pf-title">Complete Analytics &amp; Growth Consulting</span>
+                            <i class="fa-solid fa-chevron-down pf-chevron"></i>
+                        </button>
+                        <div class="pf-detail">We deliver a full cross-platform performance report each month showing spend, reach, clicks, leads, and cost-per-result. Alongside the data, you receive a strategy call where we walk you through insights and align on the plan for the next month.</div>
+                    </li>
+                    <li class="pf-item">
+                        <button class="pf-toggle" onclick="toggleFeature(this)">
+                            <span class="pf-icon"><i class="fa-solid fa-check"></i></span>
+                            <span class="pf-title">Dedicated Account Manager</span>
+                            <i class="fa-solid fa-chevron-down pf-chevron"></i>
+                        </button>
+                        <div class="pf-detail">You have a single point of contact who knows your business inside out, keeps everything coordinated across all platforms, and is available to answer questions quickly — no chasing, no confusion.</div>
+                    </li>
                 </ul>
                 <button class="cta-btn">GET STARTED</button>
             </div>

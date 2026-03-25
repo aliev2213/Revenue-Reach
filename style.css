@@ -787,28 +787,98 @@ footer {
     margin: 1rem 0 2rem 0;
     text-align: left;
     flex-grow: 1;
-    /* Pushes button down */
 }
 
-.pricing-features li {
-    margin-bottom: 0.8rem;
-    color: var(--text-muted);
-    font-size: 0.95rem;
+/* Plain row (e.g. "Everything in Plan 1") */
+.pf-item--plain {
     display: flex;
-    align-items: flex-start;
-    gap: 0.8rem;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
-.pricing-features li i {
+.pf-item--plain .pf-icon i {
     color: var(--primary);
-    margin-top: 0.3rem;
+    font-size: 0.8rem;
+}
+
+/* Accordion item wrapper */
+.pf-item {
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Toggle button */
+.pf-toggle {
+    width: 100%;
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.6rem 0;
+    text-align: left;
+    font-family: var(--font-body);
+    transition: background 0.2s;
+}
+
+.pf-toggle:hover {
+    background: rgba(255,255,255,0.03);
+    border-radius: 6px;
+}
+
+.pf-icon {
+    flex-shrink: 0;
+}
+
+.pf-icon i {
+    color: var(--primary);
+    font-size: 0.8rem;
+}
+
+.pf-title {
+    flex: 1;
     font-size: 0.9rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    line-height: 1.3;
+}
+
+.pf-chevron {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.pf-toggle.open .pf-chevron {
+    transform: rotate(180deg);
+}
+
+/* Detail panel */
+.pf-detail {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.25s ease;
+    font-size: 0.83rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    padding: 0 0 0 1.5rem;
+}
+
+.pf-detail.open {
+    max-height: 200px;
+    padding: 0 0 0.75rem 1.5rem;
 }
 
 .feature-strong {
     color: #fff;
     font-weight: 600;
+    font-size: 0.9rem;
 }
+
 
 /* CTA Button */
 .cta-btn {

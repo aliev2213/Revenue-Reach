@@ -372,3 +372,13 @@ function toggleFaq(id) {
     console.log(`📋 FAQ toggled: ${id} → ${!isOpen ? 'open' : 'closed'}`);
 }
 
+// --- Pricing Feature Accordion (global scope for onclick) ---
+function toggleFeature(btn) {
+    const detail = btn.nextElementSibling;
+    if (!detail) return;
+    const isOpen = detail.classList.contains('open');
+
+    // Toggle this item
+    detail.classList.toggle('open', !isOpen);
+    btn.classList.toggle('open', !isOpen);
+}
