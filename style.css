@@ -302,6 +302,16 @@ h3 {
     margin: 0 auto;
 }
 
+/* Center 4th pricing plan directly below Plan 2 on large screens */
+@media (min-width: 1080px) {
+    #services .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #services .grid-3 .pricing-card:nth-child(4) {
+        grid-column: 2;
+    }
+}
+
 .card {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -650,6 +660,24 @@ footer {
     flex-direction: column;
     justify-content: flex-start;
     height: 100%;
+}
+
+.corner-ribbon {
+    position: absolute;
+    top: 35px;
+    right: -45px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: #fff;
+    padding: 8px 50px;
+    font-size: 0.75rem;
+    font-family: var(--font-head);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transform: rotate(45deg);
+    box-shadow: 0 4px 15px rgba(255, 61, 127, 0.4);
+    z-index: 20;
+    white-space: nowrap;
 }
 
 .pricing-card:hover {
