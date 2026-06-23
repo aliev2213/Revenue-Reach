@@ -382,3 +382,36 @@ function toggleFeature(btn) {
     detail.classList.toggle('open', !isOpen);
     btn.classList.toggle('open', !isOpen);
 }
+
+// --- Web Design Add-On Toggle (global scope for onclick) ---
+function toggleAddon(btn) {
+    const detail = btn.nextElementSibling;
+    if (!detail) return;
+    const isOpen = detail.classList.contains('open');
+
+    // Toggle open state on detail
+    detail.classList.toggle('open', !isOpen);
+    
+    // Toggle active class on button
+    btn.classList.toggle('active', !isOpen);
+
+    // Toggle icon class or handle transition
+    const icon = btn.querySelector('.addon-icon');
+    if (icon) {
+        if (!isOpen) {
+            icon.classList.remove('fa-plus');
+            icon.classList.add('fa-minus');
+        } else {
+            icon.classList.remove('fa-minus');
+            icon.classList.add('fa-plus');
+        }
+    }
+    
+    // Toggle button text
+    const textSpan = btn.querySelector('span');
+    if (textSpan) {
+        textSpan.innerText = !isOpen ? 'Remove Website Design' : 'Add Website Design';
+    }
+
+    console.log(`🔌 Add-on toggled: ${!isOpen ? 'added' : 'removed'}`);
+}

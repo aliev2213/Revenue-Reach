@@ -104,7 +104,7 @@ h3 {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 1.5rem 5%;
+    padding: 0.25rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -907,6 +907,97 @@ footer {
     font-size: 0.9rem;
 }
 
+/* Web Design Add-On styles */
+.addon-toggle-wrap {
+    margin-top: 1rem;
+    padding-top: 1.25rem;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    text-align: left;
+}
+
+.addon-toggle-btn {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    color: #e2e8f0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.addon-toggle-btn:hover {
+    background: rgba(92, 36, 255, 0.1);
+    border-color: rgba(92, 36, 255, 0.3);
+    color: #fff;
+}
+
+.addon-toggle-btn.active {
+    background: rgba(92, 36, 255, 0.15);
+    border-color: rgba(92, 36, 255, 0.5);
+    color: #00f0ff;
+    box-shadow: 0 0 15px rgba(92, 36, 255, 0.1);
+}
+
+.addon-icon {
+    font-size: 0.8rem;
+    color: var(--primary);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.addon-toggle-btn.active .addon-icon {
+    color: #00f0ff;
+}
+
+.addon-chevron {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    transition: transform 0.3s ease;
+}
+
+.addon-toggle-btn.active .addon-chevron {
+    transform: rotate(180deg);
+}
+
+.addon-detail {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, padding 0.3s ease;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    padding: 0 0.5rem;
+}
+
+.addon-detail.open {
+    max-height: 250px;
+    opacity: 1;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+}
+
+.addon-price {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+.addon-price span {
+    font-weight: 400;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
 
 /* CTA Button */
 .cta-btn {
