@@ -1763,4 +1763,84 @@ a.primary-btn {
     .nav-links.open {
         display: flex;
     }
+
+    .section {
+        padding: 4rem 5%;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .glass-nav {
+        padding: 0.5rem 4%;
+    }
+
+    .glass-nav .logo img {
+        height: 28px !important;
+    }
+
+    .hero-content h1 {
+        font-size: 2.1rem;
+        line-height: 1.2;
+    }
+
+    .hero-content p.subtitle {
+        font-size: 0.95rem;
+    }
+
+    .stats-bar {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2.5rem 5%;
+        align-items: center;
+    }
+
+    .stat-item .number,
+    .stat-item .suffix {
+        font-size: 2.5rem;
+    }
+
+    .stat-item .label {
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;
+    }
+
+    .grid-3 {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .pricing-card {
+        padding: 2rem 1.25rem;
+    }
+
+    .corner-ribbon {
+        font-size: 0.65rem;
+        padding: 5px 35px;
+        top: 20px;
+        right: -35px;
+    }
+
+    .carousel-container {
+        height: 440px;
+    }
+
+    .carousel-item {
+        width: 85vw;
+        max-width: 320px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.75rem;
+    }
+
+    .stat-item .number,
+    .stat-item .suffix {
+        font-size: 2.1rem;
+    }
 }
