@@ -352,6 +352,73 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         console.log('📱 Mobile menu initialized');
     }
+
+    // --- Inquiry Form Handler (FormSubmit to brand2audience@gmail.com) ---
+    const inquiryForm = document.getElementById('inquiry-form');
+    if (inquiryForm) {
+        console.log('✉️ Inquiry form initialized!');
+        inquiryForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('contact-submit-btn');
+            const btnText = document.getElementById('btn-text');
+            const formStatus = document.getElementById('form-status');
+
+            const name = document.getElementById('contact-name').value.trim();
+            const email = document.getElementById('contact-email').value.trim();
+            const serviceSelect = document.getElementById('contact-service');
+            const service = serviceSelect ? serviceSelect.value : 'General Inquiry';
+            const message = document.getElementById('contact-message') ? document.getElementById('contact-message').value.trim() : '';
+
+            if (!name || !email) {
+                formStatus.className = 'form-status error';
+                formStatus.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Please fill in your name and email address.';
+                return;
+            }
+
+            // Disable button & show spinner
+            submitBtn.disabled = true;
+            btnText.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> SENDING INQUIRY...';
+            formStatus.className = 'form-status';
+            formStatus.style.display = 'none';
+
+            try {
+                const response = await fetch('https://formsubmit.co/ajax/brand2audience@gmail.com', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        _subject: `⚡ New Lead: ${name} (${service || 'General'})`,
+                        _template: 'table',
+                        _captcha: 'false',
+                        'Client Name / Business': name,
+                        'Email Address': email,
+                        'Selected Service / Plan': service || 'Not specified',
+                        'Project Goals / Details': message || 'No additional details provided'
+                    })
+                });
+
+                const result = await response.json();
+
+                if (response.ok || result.success === 'true' || result.success === true) {
+                    formStatus.className = 'form-status success';
+                    formStatus.innerHTML = '<i class="fa-solid fa-circle-check"></i> Thank you! Your inquiry has been sent to <strong>brand2audience@gmail.com</strong>. Our strategic team will get back to you within 24 hours.';
+                    inquiryForm.reset();
+                } else {
+                    throw new Error(result.message || 'Form submission failed');
+                }
+            } catch (err) {
+                console.error('Submission error:', err);
+                formStatus.className = 'form-status error';
+                formStatus.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Unable to send via form right now. Please email us directly at <strong>brand2audience@gmail.com</strong>.';
+            } finally {
+                submitBtn.disabled = false;
+                btnText.innerText = 'SEND INQUIRY';
+            }
+        });
+    }
 });
 
 // --- FAQ Accordion (global scope for onclick) ---
@@ -414,4 +481,26 @@ function toggleAddon(btn) {
     }
 
     console.log(`🔌 Add-on toggled: ${!isOpen ? 'added' : 'removed'}`);
+}
+
+// --- Pre-select Pricing Plan in Contact Form ---
+function selectPricingPlan(planKeyword) {
+    const serviceSelect = document.getElementById('contact-service');
+    if (serviceSelect) {
+        for (let i = 0; i < serviceSelect.options.length; i++) {
+            const opt = serviceSelect.options[i];
+            if (opt.value.toLowerCase().includes(planKeyword.toLowerCase()) || opt.text.toLowerCase().includes(planKeyword.toLowerCase())) {
+                serviceSelect.selectedIndex = i;
+                break;
+            }
+        }
+    }
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+    const nameInput = document.getElementById('contact-name');
+    if (nameInput) {
+        setTimeout(() => nameInput.focus(), 600);
+    }
 }
