@@ -353,6 +353,17 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('📱 Mobile menu initialized');
     }
 
+    // Check if redirected back after form submit (_next URL flag)
+    if (window.location.search.includes('submitted=true') || window.location.hash.includes('submitted=true')) {
+        const formStatus = document.getElementById('form-status');
+        if (formStatus) {
+            formStatus.className = 'form-status success';
+            formStatus.innerHTML = '<i class="fa-solid fa-circle-check"></i> Thank you! Your inquiry has been sent to <strong>aliev.a.ashraf@gmail.com</strong>. Our strategic team will get back to you within 24 hours.';
+            const contactSec = document.getElementById('contact');
+            if (contactSec) contactSec.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
     // --- Inquiry Form Handler (FormSubmit to aliev.a.ashraf@gmail.com) ---
     const inquiryForm = document.getElementById('inquiry-form');
     if (inquiryForm) {
@@ -383,41 +394,43 @@ document.addEventListener('DOMContentLoaded', () => {
             formStatus.style.display = 'none';
 
             try {
-                const response = await fetch('https://formsubmit.co/ajax/aliev.a.ashraf@gmail.com', {
+                const params = new URLSearchParams();
+                params.append('Client Name / Business', name);
+                params.append('Client Email', email);
+                params.append('Selected Service / Plan', service || 'Not specified');
+                params.append('Project Goals / Details', message || 'No extra message');
+                params.append('_subject', `⚡ New Lead: ${name} (${service || 'General'})`);
+                params.append('_cc', 'brand2audience@gmail.com');
+                params.append('_captcha', 'false');
+                params.append('_template', 'table');
+
+                const response = await fetch('https://formsubmit.co/aliev.a.ashraf@gmail.com', {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'Accept': 'text/html,application/xhtml+xml,application/xml'
                     },
-                    body: JSON.stringify({
-                        _subject: `⚡ New Lead: ${name} (${service || 'General'})`,
-                        _template: 'table',
-                        _captcha: 'false',
-                        _cc: 'brand2audience@gmail.com',
-                        'Client Name / Business': name,
-                        'Client Email': email,
-                        'Selected Service / Plan': service || 'Not specified',
-                        'Project Goals / Details': message || 'No additional details provided'
-                    })
+                    body: params.toString()
                 });
 
-                const result = await response.json();
-                console.log('FormSubmit response:', result);
+                const htmlText = await response.text();
+                console.log('FormSubmit response status:', response.status);
 
-                if (response.ok || result.success === 'true' || result.success === true) {
-                    formStatus.className = 'form-status success';
-                    formStatus.innerHTML = '<i class="fa-solid fa-circle-check"></i> Thank you! Your inquiry has been sent to <strong>aliev.a.ashraf@gmail.com</strong>. Our strategic team will get back to you within 24 hours.';
-                    inquiryForm.reset();
-                } else if (result.message && result.message.toLowerCase().includes('activate')) {
-                    formStatus.className = 'form-status error';
-                    formStatus.innerHTML = '<i class="fa-solid fa-envelope-circle-check"></i> <strong>Activation Email Sent:</strong> FormSubmit sent a 1-click activation email to <strong>aliev.a.ashraf@gmail.com</strong>. Please check your inbox/spam folder and click <em>"Activate Form"</em> to permanently enable instant email delivery.';
+                if (response.ok || response.status === 200) {
+                    if (htmlText.includes('Action Required') || htmlText.includes('Activate')) {
+                        formStatus.className = 'form-status error';
+                        formStatus.innerHTML = '<i class="fa-solid fa-envelope-circle-check"></i> <strong>Activation Email Sent:</strong> FormSubmit sent an activation email to <strong>aliev.a.ashraf@gmail.com</strong>. Please check your inbox/spam and click <em>"Activate Form"</em> to enable live delivery.';
+                    } else {
+                        formStatus.className = 'form-status success';
+                        formStatus.innerHTML = '<i class="fa-solid fa-circle-check"></i> Thank you! Your inquiry has been sent to <strong>aliev.a.ashraf@gmail.com</strong>. Our strategic team will get back to you within 24 hours.';
+                        inquiryForm.reset();
+                    }
                 } else {
-                    throw new Error(result.message || 'Form submission failed');
+                    inquiryForm.submit();
                 }
             } catch (err) {
-                console.error('Submission error:', err);
-                formStatus.className = 'form-status error';
-                formStatus.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Unable to send via form right now. Please email us directly at <strong>aliev.a.ashraf@gmail.com</strong>.';
+                console.warn('AJAX submit warning, falling back to standard POST submit:', err);
+                inquiryForm.submit();
             } finally {
                 submitBtn.disabled = false;
                 btnText.innerText = 'SEND INQUIRY';
